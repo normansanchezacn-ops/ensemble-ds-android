@@ -23,8 +23,8 @@ captures/
 output-metadata.json
 
 # IntelliJ
+.idea/*
 *.iml
-.idea/
 misc.xml
 deploymentTargetDropDown.xml
 render.experimental.xml
