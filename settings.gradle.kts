@@ -26,4 +26,3 @@ rootProject.name = "Ensemble"
 include(":app")
 include(":ensemble_designsytem")
 include(":ensemble_presentation")
-include(":EnsembleInstrumentationShared")

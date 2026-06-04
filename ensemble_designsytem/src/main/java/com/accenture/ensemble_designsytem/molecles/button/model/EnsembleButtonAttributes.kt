@@ -1,7 +1,7 @@
 package com.accenture.ensemble_designsytem.molecles.button.model
 
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.vector.ImageVector
+import com.accenture.ensemble_designsytem.atoms.imagevector.model.EnsembleImageVectorAttributes
 import com.accenture.ensemble_designsytem.atoms.text.model.EnsembleTextAttributes
 import com.accenture.ensemble_designsytem.atoms.text.model.EnsembleTextType
 
@@ -12,7 +12,7 @@ data class EnsembleButtonAttributes(
     val text: String = "",
     val buttonTextModifier: Modifier = Modifier,
     val buttonTextAttributes: EnsembleTextAttributes = EnsembleTextAttributes(textType = EnsembleTextType.BODY),
-    val leadingIcon: ImageVector? = null,
-    val trailingIcon: ImageVector? = null
+    val leadingIcon: EnsembleImageVectorAttributes? = null,
+    val trailingIcon: EnsembleImageVectorAttributes? = null
 )
 

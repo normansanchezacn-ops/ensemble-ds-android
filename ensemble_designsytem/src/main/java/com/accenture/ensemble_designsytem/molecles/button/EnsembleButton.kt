@@ -8,14 +8,15 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.accenture.ensemble_designsytem.R
 import com.accenture.ensemble_designsytem.atoms.background.EnsembleBackground
+import com.accenture.ensemble_designsytem.atoms.imagevector.ensembleImageVector
+import com.accenture.ensemble_designsytem.atoms.imagevector.model.EnsembleImageVectorAttributes
 import com.accenture.ensemble_designsytem.atoms.text.EnsembleText
 import com.accenture.ensemble_designsytem.molecles.button.model.EnsembleButtonAttributes
 import com.accenture.ensemble_designsytem.molecles.button.model.EnsembleButtonType
@@ -58,7 +59,8 @@ private fun resolveButtonElevation() = ButtonDefaults.buttonElevation(
 private fun ensembleButtonContent(buttonAttributes: EnsembleButtonAttributes): @Composable RowScope.() -> Unit {
     return {
         buttonAttributes.leadingIcon?.let { icon ->
-            Icon(imageVector = icon, contentDescription = null)
+            Icon(ensembleImageVector(icon), contentDescription = null)
+
         }
         EnsembleText(
             text = buttonAttributes.text,
@@ -66,7 +68,7 @@ private fun ensembleButtonContent(buttonAttributes: EnsembleButtonAttributes): @
             attributes = buttonAttributes.buttonTextAttributes
         )
         buttonAttributes.trailingIcon?.let { icon ->
-            Icon(imageVector = icon, contentDescription = null)
+            Icon(ensembleImageVector(icon), contentDescription = null)
         }
     }
 }
@@ -84,7 +86,12 @@ fun EnsembleButtonPreview() {
             val buttonOutline = EnsembleButtonAttributes(
                 isEnabled = true,
                 text = "Button",
-                buttonType = EnsembleButtonType.OUTLINED
+                buttonType = EnsembleButtonType.OUTLINED,
+                leadingIcon = EnsembleImageVectorAttributes(
+                    R.drawable.ic_close,
+                    color = MaterialTheme.colorScheme.error
+                ),
+                trailingIcon = EnsembleImageVectorAttributes(R.drawable.ic_close, color = MaterialTheme.colorScheme.error)
             )
             val buttonText = EnsembleButtonAttributes(
                 isEnabled = true,
